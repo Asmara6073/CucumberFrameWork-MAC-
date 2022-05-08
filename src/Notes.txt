@@ -1,0 +1,154 @@
+Gherkin Language
+
+Scenario
+Given- pre-condition
+When- actions we need to perform
+And- supporting tag
+Then- expected results
+
+
+Recap-
+What is a framework?
+    -An organized structure of folders and packages which allows us to write clean and maintainable code
+
+Build management tool
+    --Maven
+
+Pom.xml is the main configuration file in mave poject
+
+main-- it is used to write the code for development
+test-- it is used to write code to test the application
+    --java- for tech/coding we use java directory
+    --resources- for non tech/non code we use resources
+
+Cucumber-- it supports BDD
+        -- we use Gherkin language(plain english text) to write the scenarios
+        -- it works with Junit
+
+Scenario -- it is a test case
+Given -- pre condition
+When -- actions we need to perform
+And -- Supporting Tag
+Then -- results
+
+US 12345 - Employee Search
+
+Scenario - Search employee by ID
+-Given user is navigated to HRMS Application
+-When user enters valid admin credentials
+-And user clicks on login button
+-And user navigates to employee list page
+-When user enters valid employee id
+-And clicks on search button
+-Then user is able to see employee information
+
+Scenario - Search employee by name
+-Given user is navigated to HRMS Application
+-When user enters valid admin credentials
+-And user clicks on login button
+-And user navigates to employee list page
+-When user enters valid name
+-And clicks on search button
+-Then user is able to see employee information
+
+-File where we write BDD scenarios is feature file
+    -This file has .feature extension
+
+Recap -
+
+We use feature file to write our scenarios
+--Search employee by id
+--Search employee by name
+
+In feature file we write scenarios using gherkin language
+--Given,When,And,Then, Scenario, Feature
+
+after feature file, we need to create step definitions
+
+-------------------------------------------------------------------------
+
+Class 4
+
+Recap--
+-------------
+Common methods class in our framework is used to write all the methods we will be using in majority scenarios
+(code reusability)
+
+    -sendText method, click
+
+In Constants class we provide implicit wait, explicit wait
+
+Page object model is a design pattern
+According to page object model, we create page classes for all the screens available in the application
+
+------------------------------------------------------------------------------------------------------------
+Class 5
+
+Recap--
+
+Creating multiple steps classes for multiple future files
+
+Page Object Model Design Pattern
+
+In common methods we are calling page initializers method, this method is going to call the objects of page classes
+which will call the constructor and these constructors will initialize all the web elements
+
+Class 6
+
+Recap--
+
+Runner class - we use this class to execute test cases in cucumber
+
+cucumber options:
+-- features- path of feature file
+-- glue - to provide the path of steps definitions
+-- dryRun - it provides step definition to add in steps classes
+-- monochrome - if it is set to true, it cleans the console (removes irrelevant information from console)
+-- tags - we use tags to execute scenarios in groups
+        --here we use OR and AND to execute scenarios from 2 or more different tags together
+
+Background: we take common steps scenarios and put them in background
+
+Hooks: we use hooks to provide pre condition and post condition to all the scenarios
+We always create hooks class in steps package
+
+Background vs Hooks:
+background - it is applicable to one feature file
+hooks - it is applicable to all the feature files
+
+Class 7
+
+Recap--
+
+--Hooks- used to write pre conditions and post conditions of the project
+    -@Before and @After- two types of hooks we have in cucumber
+    - We always write our hooks in steps package
+
+ Data Driven Testing- when one script works across multiple data
+    -Using examples table and scenario
+    -Using data table
+
+    In Junit there are two types of Assertions.
+    1-Comparison
+    2-Existence
+
+
+    When handling Excel files first we must
+        -Use FileInputStream to get the file
+        -XSSF workbook to open the excel file
+        -book.getSheet to get sheet of file we are dealing with
+        -need to get all the rows of the sheet with data in them
+        -then get the number of columns in each row
+        -loop using nested for loop
+            -outer loop will create a map for each row
+            -inner loop will be used to fetch the data of the map
+        -store these maps in a list
+------------------------------------------------------------------------------------------------------
+Class 8-9-----------------
+-Maven surefire plugin
+
+-To clean the project - mvn clean
+    -cleans your target folder
+-To run the project- mvn test
+    -to execute our test cases
+-Override the tags from cmd- mvn clean verify -Dcucumber.filter.tags="@latest"
