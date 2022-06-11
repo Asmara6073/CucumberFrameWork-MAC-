@@ -2,13 +2,13 @@ utils/CommonMethods.class
 runners/Regression.class
 steps/EmployeeSearchSteps.class
 pages/DashboardPage.class
-runners/FailedRunner.class
-steps/AddEmployeeSteps.class
-runners/RunnerClass.class
 steps/Hooks.class
 pages/AddEmployeePage.class
 steps/DashboardSteps.class
 steps/LoginSteps.class
+runners/FailedRunner.class
+steps/AddEmployeeSteps.class
+runners/RunnerClass.class
 utils/ConfigReader.class
 utils/Constants.class
 utils/ExcelReader.class

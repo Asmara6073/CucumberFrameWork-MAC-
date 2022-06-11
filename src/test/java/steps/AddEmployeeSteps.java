@@ -6,8 +6,10 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.AddEmployeePage;
 import utils.CommonMethods;
 import utils.Constants;
+import utils.DBUtils;
 import utils.ExcelReader;
 
 import java.util.Iterator;
@@ -15,6 +17,11 @@ import java.util.List;
 import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
+
+    String empID;
+    String firstName;
+    String dbFirstName;
+    String dbEmpID;
 
     @When("user clicks on PIM option")
     public void user_clicks_on_pim_option() {
@@ -136,7 +143,32 @@ public class AddEmployeeSteps extends CommonMethods {
 
         }
     }
+    @When("user grabs the employee id")
+    public void user_grabs_the_employee_id() {
+      empID=addEmployeePage.empIdLocator.getAttribute("value");
+      firstName=addEmployeePage.firstNameField.getAttribute("value");
+    }
 
 
 
+
+    @When("user query the database for same employee id")
+    public void user_query_the_database_for_same_employee_id() {
+        String query = "select * from hs_hr_employees where employee_id= '"+empID+"'";
+        List<Map<String,String>> tableData=DBUtils.getDataFromDB(query);
+        dbFirstName=tableData.get(0).get("emp_firstname");
+        dbEmpID=tableData.get(0).get("employee_id");
+    }
+
+
+    @Then("user verifies the results")
+    public void userVerifiesTheResults() {
+        System.out.println("First name from front end" +firstName);
+        System.out.println("First name from back end"+ dbFirstName);
+
+        Assert.assertEquals(firstName,dbFirstName);
+        Assert.assertEquals(empID,dbEmpID);
+
+
+    }
 }

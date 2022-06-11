@@ -3,7 +3,7 @@ Feature: Validation of login scenarios
   Background:
     #Given user is navigated to HRMS application
 
-  @smoke @batch12
+  @adminlogin
   Scenario: Admin Login
     #Given user is navigated to HRMS application
     When user enters valid admin credentials

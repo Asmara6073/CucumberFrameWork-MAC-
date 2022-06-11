@@ -17,6 +17,7 @@ Background:
     @123
     Scenario: Adding one employee using cucumber feature file
       And user enters "zuhoor" "Mujeeb" and "Sylvia"
+      And user clicks on save button
       Then employee added successfully
 
       @test
@@ -43,3 +44,11 @@ Background:
         @excel
       Scenario: Adding multiple employees from excel file
           When user adds multiple employees from excel file using "EmployeeData" sheet and verify the user added
+
+  @e2eTest1
+  Scenario: Adding one employee using cucumber feature file
+    And user enters "Taylor" "Shakira" and "Swift"
+    And user grabs the employee id
+    And user clicks on save button
+    And user query the database for same employee id
+    Then user verifies the results
