@@ -20,8 +20,8 @@ static Sheet sheet;
 
 public static void openExcel(String filePath){
     try {
-        FileInputStream fis=new FileInputStream(filePath);
-        book= new XSSFWorkbook(fis);
+        FileInputStream fis=new FileInputStream(filePath);// navigate to the location of our excel file
+        book= new XSSFWorkbook(fis);// xssf workbook is the class that reads files with xlsx extension (excel files)
     } catch (FileNotFoundException e) {
         e.printStackTrace();
     } catch (IOException e) {
@@ -30,21 +30,26 @@ public static void openExcel(String filePath){
 }
 
 public static void getSheet(String sheetName){
+    // we need to specify which sheet we want to work with so we use the .getSheet("SheetName") method and pass the name
     sheet=book.getSheet(sheetName);
 }
 
 //it will return total no. of rows available in the worksheet
 public static int getRowCount(){
-   return sheet.getPhysicalNumberOfRows();
+   // we need the total number of rows so we can iterate through each row and create a map for the data of each row
+    // excluding the header row because those are our keys
+    return sheet.getPhysicalNumberOfRows();
 }
 
 //it will return the total no. of columns in every row
 public static int getColsCount(int rowIndex){
+    // we need the total number of columns in each row so we can iterate through each column in each row to get the cell value
     return sheet.getRow(rowIndex).getPhysicalNumberOfCells();
 }
 
 //it will return the data from cell in string format
 public static String getCellData(int rowIndex,int colIndex){
+    // we get the data from each cell in string format as our values in map
     return sheet.getRow(rowIndex).getCell(colIndex).toString();
 }
 

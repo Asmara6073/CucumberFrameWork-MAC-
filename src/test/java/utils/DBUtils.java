@@ -19,19 +19,26 @@ public class DBUtils {
         ResultSet resultSet=null;
         ResultSetMetaData resultSetMetaData=null;
 
-        List<Map<String,String>> tableData=new ArrayList<>();
+        List<Map<String,String>> tableData=new ArrayList<>();// list to store the all maps of our data
         try{
+            //establishes connection to the DB-- you need the database url, username, and password
             connection= DriverManager.getConnection(dbUrl,userName,password);
+            //once we have a connection we must createStatement
+            //statement is responsible for taking our queries and executing them on database and returning our resultset
             statement=connection.createStatement();
+            //use our statement to execute our query and returns our resultSet
             resultSet=statement.executeQuery(query);
+            //resultsetmetadata gives you the information about the table itself like size, column names, etc
+            // we use this to get our column name and store them as keys in our map
             resultSetMetaData=resultSet.getMetaData();
 
-            while(resultSet.next()){
-                Map<String,String> row=new HashMap<>();
-                for(int i=1;i<=resultSetMetaData.getColumnCount();i++){
-                    //gets me the column name
+            while(resultSet.next()){// points to next row of results(iterates through the rows)
+                Map<String,String> row=new HashMap<>();// create a new map for each row of data
+                for(int i=1;i<=resultSetMetaData.getColumnCount();i++){// how many columns in this resultSet
+                    //(for loop iterates through the columns)
+                    //gets me the column name by .getColumnName at index we are on until we get all column names
                     String columnName=resultSetMetaData.getColumnName(i);
-                    //gets me the value in the column
+                    //using column name to retrieve the value in the columns in the result set
                     String columnValue=resultSet.getString(columnName);
                     row.put(columnName,columnValue);// add k-v pair into map
                 }

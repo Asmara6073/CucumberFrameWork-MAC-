@@ -11,6 +11,7 @@ Background:
   Scenario: Adding one employee from feature file
    # Given user is navigated to HRMS application
     And user enters firstname middlename and lastname
+    And user captures empID
     And user clicks on save button
     Then employee added successfully
 

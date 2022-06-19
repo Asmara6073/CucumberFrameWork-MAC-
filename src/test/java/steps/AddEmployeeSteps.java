@@ -1,6 +1,7 @@
 package steps;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
-
+    String empIDValue;
     String empID;
     String firstName;
     String dbFirstName;
@@ -31,19 +32,21 @@ public class AddEmployeeSteps extends CommonMethods {
     public void user_clicks_on_add_employee_option() {
       click(employeeSearchPage.addEmployeeOption);
     }
+
     @When("user enters firstname middlename and lastname")
     public void user_enters_firstname_middlename_and_lastname() {
-       sendText(addEmployeePage.firstNameField,"dasir");
-       sendText(addEmployeePage.middleNameField,"hamillia");
-       sendText(addEmployeePage.lastNameField,"tolom");
+       sendText(addEmployeePage.firstNameField,"Steph");
+       sendText(addEmployeePage.middleNameField,"Bean");
+       sendText(addEmployeePage.lastNameField,"Bryant");
     }
     @When("user clicks on save button")
     public void user_clicks_on_save_button() {
       click(addEmployeePage.saveBtn);
     }
+
     @Then("employee added successfully")
     public void employee_added_successfully() {
-        System.out.println("Employee added");
+        System.out.println("Employee added successfully");
     }
 
 
@@ -170,5 +173,10 @@ public class AddEmployeeSteps extends CommonMethods {
         Assert.assertEquals(empID,dbEmpID);
 
 
+    }
+
+    @And("user captures empID")
+    public void userCapturesEmpID() {
+         empIDValue=addEmployeePage.empIdLocator.getAttribute("value");
     }
 }

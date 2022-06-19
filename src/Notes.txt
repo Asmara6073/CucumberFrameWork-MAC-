@@ -152,3 +152,81 @@ Class 8-9-----------------
 -To run the project- mvn test
     -to execute our test cases
 -Override the tags from cmd- mvn clean verify -Dcucumber.filter.tags="@latest"
+
+--------------------------------------------------------------------------------------------------------------------
+
+API Notes
+Class 5
+
+Rest Assured API
+    -Is a DSL (domain specific language)
+    -It is a java based library that is used to automate rest API
+
+ Rest Assured follows the functionality of BDD
+
+ pre condition - request preparation, request specification
+
+ given- prepare the request
+ When- hitting the endpoint (send the request)
+ Then- expected response
+
+ NOTE: baseURI = baseURL
+
+ Hamcrest matchers
+    -A popular framework that tells us to create the matcher objects
+
+  prettyPrint- used to print the response in the console
+
+  Class 6
+
+  Recap-
+
+  Java rest assured API-
+
+  given - prepare the request
+  when- making a call
+  then - verification/assertion
+
+Class 7
+Recap-
+
+To create an employee we use
+POST-
+Base URL-
+Endpoint-
+Headers-
+
+Then-
+
+-jsonPath()
+
+-To retrieve employee from the database
+Get-
+query parameter
+token
+
+@Test- junit annotation we use to execute our test cases
+@Fix method order we use to change the flow of execution (Name.ascending- alphabetical order
+
+TO update the details of the employee
+
+PUT
+body
+header
+token
+endpoint
+
+-----------------------------------------------------------------------
+Class 8
+
+Recap-
+
+Generate token via automation so we don't have to keep creating
+Created POST request to add an employee using feature file
+
+API constants class
+API payload constants - the body we need to create for. We can pass it from API payload constants class
+
+
+
+

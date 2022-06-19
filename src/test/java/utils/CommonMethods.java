@@ -1,6 +1,7 @@
 package utils;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import steps.PageInitializers;
@@ -14,9 +15,11 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class CommonMethods extends PageInitializers {
+ public  class CommonMethods extends PageInitializers {
 
     public static WebDriver driver;
 
@@ -120,6 +123,19 @@ public class CommonMethods extends PageInitializers {
         //to format the date according to our choice we want to implement in this function
         SimpleDateFormat sdf=new SimpleDateFormat(pattern);
         return sdf.format(date);
+    }
+
+
+    public static void verifyRowText(List<WebElement> list, String expectedRowText){
+
+        Iterator<WebElement> itr=list.iterator();
+
+        while(itr.hasNext()){
+            WebElement row=itr.next();
+            String actualRowText=row.getText();
+            Assert.assertEquals(actualRowText,expectedRowText);
+        }
+
     }
 
 
