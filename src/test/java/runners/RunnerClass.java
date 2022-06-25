@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         //if we set it true, it will quickly scan all gherkin steps whether they are implemented or not
         // if we set it to true, it stops actual execution
         //to execute scripts in real time, we should set this value to false
-        dryRun = true,
+        dryRun = false,
 
         //it means the console output for cucumber test is having irrelevant information
         //when we set it to true, it simply removes all the irrelevant information
@@ -26,8 +26,8 @@ import org.junit.runner.RunWith;
             // scenario having the tag
         //use and, if we need to execute scenarios from logical and keyword which will execute the scenarios
             //having both the tags in it
-        tags="@api",
-        plugin={"html:target/cucumber.html","pretty","json:target/cucumber.json",
+        tags="@adminlogin",
+        plugin={"html:target/default-cucumber-reports","pretty","json:target/cucumber.json",
                 "rerun:target/failed.txt"
 
         }

@@ -1,0 +1,33 @@
+API Review Class 01--
+
+What is an API? (Application Programming Interface)
+    -gets the http request from our front end and sends back a response from the back end
+
+
+ Can API be offline?
+    -YES!!
+
+API:
+
+http api:
+
+post(endpoint){
+
+some code
+}
+
+The http request:
+crud--> create, retrieve, update, delete
+
+1.POST
+2.GET
+3.UPDATE
+4.DELETE
+5.PATCH
+
+
+1. POST request
+    a.BaseURL + Endpoint= Base URI---  hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+    b.Body
+    c.Headers
+
