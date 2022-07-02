@@ -1,0 +1,35 @@
+Go Jenkins and create a new Job
+    Job is every project we create in Jenkins
+
+ Steps to creating a Job
+    1)Click  on new Item
+    2)Enter name and click on Maven Project
+    3)Source Code from Git. Jenkins is linked with Gitub and pulls the code automatically from there
+        We need to add the link of the repo we want it to link with
+
+    4) We don't want to specify any branch
+    5) POM.xml
+        POM file is used by Jenkins to run our Cucumber Framework
+    6)In goals and options we need to mention the runner class we want to run from
+        command - clean install -Dtest=Smoke
+
+
+
+   Headless Browser using ChromeOptions
+   -There is no chrome browser installed in Jenkins so we wont be able to open chrome browser when we run it
+            -We need to use headless browser
+
+    Parameterization
+        We can set certain parameters for our job to run on
+        Check the option "This project is paramaterized"
+        From add paramater select "Choic Paramter"
+        Name it and then put all the choices
+        Then we change the goals and options to  clean install -Dtest=$(name of parameter)
+
+
+   How to configure for reports
+    Go to configure and click on add post build actoins
+    select cucmber reports
+    click on advanced
+    include the path of report
+        **/* cucumber.json

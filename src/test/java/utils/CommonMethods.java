@@ -3,6 +3,7 @@ package utils;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import steps.PageInitializers;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -27,8 +28,14 @@ import java.util.concurrent.TimeUnit;
         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         switch(ConfigReader.getPropertyValue("browser")){
             case "chrome":
+
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setHeadless(true);
                 WebDriverManager.chromedriver().setup();
-                driver=new ChromeDriver();
+                driver=new ChromeDriver(chromeOptions);
+
+                //WebDriverManager.chromedriver().setup();
+                //driver=new ChromeDriver();
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();

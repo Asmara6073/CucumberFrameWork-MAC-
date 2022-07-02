@@ -38,7 +38,8 @@ public void createAnEmployee(){
     JsonElement json_element= new JsonParser().parse(response.asString());
 
 
-    //converting our json element into json object
+    //converting our json element into json object. JSON element is just a VALUE, we must convert it into a json object
+        // to extract data
         JsonObject json_data =json_element.getAsJsonObject();
         // extracting the value of message from the json object
         JsonElement messageValue=json_data.get("Message");
