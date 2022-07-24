@@ -15,13 +15,13 @@ import static org.hamcrest.Matchers.equalTo;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HardCodedExamples {
 
-    String baseURI=RestAssured.baseURI= "http://hrm.syntaxtechs.net/syntaxapi/api";
+    String baseURI=RestAssured.baseURI= "http://hrm.syntaxtechs.net/syntaxapi/api";// URI for request(Base URL+endpoint)
     String token= "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTUzMzQ5MTksImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY1NTM3ODExOSwidXNlcklkIjoiMzgzNyJ9.0L3hmfo6bFjBZVz6A9M_bBOCmwzYa1_z7vuNhlbG_3A";
     static String employee_id;
 
     @Test
     public void acreateEmployee(){
-        //prepares the request
+        // given prepares the request and header takes type of header and what it is, .body(takes the payload if needed)
         RequestSpecification request=given().header("Content-Type","application/json").
                 header("Authorization",token).body("{\n" +
                         "  \"emp_firstname\": \"Wardell\",\n" +
@@ -33,10 +33,11 @@ public class HardCodedExamples {
                         "  \"emp_job_title\": \"QA Engineer\"\n" +
                         "}");
                 //hitting our endpoint and storing response in the response object
-                Response response = request.when().post(" /createEmployee.php");
+                Response response = request.when().post(" /createEmployee.php");// using when and specifying the method type
                 response.prettyPrint(); //print the overall output in the console
 
                 response.then().assertThat().statusCode(201);// assert the status code
+
 
                 //Hamcrest matchers verify the string
                 response.then().assertThat().body("Message", equalTo("Employee Created"));
@@ -106,7 +107,7 @@ public class HardCodedExamples {
 
         Response response= request.when().get("/getAllEmployees.php");
         // returns string of response
-        String allEmployees=response.prettyPrint();
+        String allEmployees=response.body().asString();
 
         //jsonPath() vs jsonPath
         //jsonPath is a class that contains method for converting the values into json object

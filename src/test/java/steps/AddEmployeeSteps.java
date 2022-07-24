@@ -148,8 +148,8 @@ public class AddEmployeeSteps extends CommonMethods {
     }
     @When("user grabs the employee id")
     public void user_grabs_the_employee_id() {
-      empID=addEmployeePage.empIdLocator.getAttribute("value");
-      firstName=addEmployeePage.firstNameField.getAttribute("value");
+      empID=addEmployeePage.empIdLocator.getAttribute("value");// getting the value of empid our newly generated employee from front end
+      firstName=addEmployeePage.firstNameField.getAttribute("value");// getting the firstname of our new employee from front end
     }
 
 
@@ -159,8 +159,13 @@ public class AddEmployeeSteps extends CommonMethods {
     public void user_query_the_database_for_same_employee_id() {
         String query = "select * from hs_hr_employees where employee_id= '"+empID+"'";
         List<Map<String,String>> tableData=DBUtils.getDataFromDB(query);
-        dbFirstName=tableData.get(0).get("emp_firstname");
-        dbEmpID=tableData.get(0).get("employee_id");
+        System.out.println(tableData);
+        dbFirstName=tableData.get(0).get("emp_firstname");// grabbing the first name of employee from database
+        // from tableData which is a list of all of our rows(maps) we want the first row (map) which is at index 0
+        // then we use the key to retrieve the value we want and the key is one of the column names.
+        dbEmpID=tableData.get(0).get("employee_id");// grabbing the empID from database from created employee
+        // from tableData which is a list of all of our rows(maps) we want the first row (map) which is at index 0
+        // then we use the key to retrieve the value we want and the key is one of the column names.
     }
 
 
@@ -169,7 +174,7 @@ public class AddEmployeeSteps extends CommonMethods {
         System.out.println("First name from front end" +firstName);
         System.out.println("First name from back end"+ dbFirstName);
 
-        Assert.assertEquals(firstName,dbFirstName);
+        Assert.assertEquals(firstName,dbFirstName);// making sure the
         Assert.assertEquals(empID,dbEmpID);
 
 

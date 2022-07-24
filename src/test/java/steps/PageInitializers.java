@@ -5,7 +5,7 @@ import pages.DashboardPage;
 import pages.EmployeeSearchPage;
 import pages.LoginPage;
 
-public abstract class PageInitializers {
+public class PageInitializers {
 
     public static LoginPage login;
     public static EmployeeSearchPage employeeSearchPage;

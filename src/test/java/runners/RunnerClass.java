@@ -26,8 +26,8 @@ import org.junit.runner.RunWith;
             // scenario having the tag
         //use and, if we need to execute scenarios from logical and keyword which will execute the scenarios
             //having both the tags in it
-        tags="@adminlogin",
-        plugin={"html:target/default-cucumber-reports","pretty","json:target/cucumber.json",
+        tags="@e2eTest1",
+        plugin={"html:target/cucumber-reports.html","pretty","json:target/cucumber.json",
                 "rerun:target/failed.txt"
 
         }

@@ -20,33 +20,39 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
- public  class CommonMethods extends PageInitializers {
+ public  class CommonMethods extends PageInitializers{
 
     public static WebDriver driver;
 
+     /**
+      * This method is reading config file to get what browser to launch and the url
+      * It is creating a new instance of our driver and also initiliazing our page objects
+      * Since it does this it is our before hook because it is a common step to all of the test cases in the project
+      *
+      */
     public void openBrowserAndLaunchApplication(){
-        ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
+         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         switch(ConfigReader.getPropertyValue("browser")){
             case "chrome":
-
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setHeadless(true);
                 WebDriverManager.chromedriver().setup();
-                driver=new ChromeDriver(chromeOptions);
-
-                //WebDriverManager.chromedriver().setup();
-                //driver=new ChromeDriver();
+                driver=new ChromeDriver();
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver=new FirefoxDriver();
+                break;
+            case "headless":
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setHeadless(true);
+                WebDriverManager.chromedriver().setup();
+                driver=new ChromeDriver(chromeOptions);
                 break;
             default:
                 throw new RuntimeException("Invalid browser name");
         }
         driver.get(ConfigReader.getPropertyValue("url"));
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT,TimeUnit.SECONDS);
         initPageObjects();
     }
 

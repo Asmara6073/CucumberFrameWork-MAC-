@@ -1,6 +1,7 @@
 package utils;
 
 import org.json.JSONObject;
+import org.openqa.selenium.json.Json;
 
 public class APIPayloadConstants {
 
@@ -34,7 +35,8 @@ public class APIPayloadConstants {
     public static String createEmployeeDynamic
             (String firstname,String lastname,String middlename,String gender,
              String birthday,String status,String jobTitle){
-        JSONObject obj=new JSONObject(); // storing our data in JSON object and storing in key values
+        JSONObject obj=new JSONObject(); // creating json object to hold the payolad of our createEmployee POST call
+                                                //use this to pass the values through our feature file
         obj.put("emp_firstname",firstname);
         obj.put("emp_lastname",lastname);
         obj.put("emp_middle_name",middlename);
@@ -55,11 +57,14 @@ public class APIPayloadConstants {
     }
 
     public static String generateTokenPayloadViaJson(){
-        JSONObject obj=new JSONObject();
+        JSONObject obj=new JSONObject();// using json object to pass the email and password of user to generate token
+                                                //for authorization
         obj.put("email","Hello123@test.com");
         obj.put("password","Tester123");
         return obj.toString();
     }
+
+
 
 
 

@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "@target/failed.txt",
         //glue is where we find implementations for gherkin steps
         //we provide the path of package to get all the step definitions
-        glue = "steps",
+        glue = "APISteps",
         //dryRun we use to get the step definitions of undefined steps
         //if we set it true, it will quickly scan all gherkin steps whether they are implemented or not
         // if we set it to true, it stops actual execution

@@ -11,10 +11,10 @@ import java.util.Map;
 public class DBUtils {
 
     public static List<Map<String,String>> getDataFromDB(String query){
-        String dbUrl=ConfigReader.getPropertyValue("dbURL");
-        String userName=ConfigReader.getPropertyValue("dbUserName");
-        String password= ConfigReader.getPropertyValue("dbPassword");
-        Connection connection = null;
+        String dbUrl=ConfigReader.getPropertyValue("dbURL");// neeed to create connection
+        String userName=ConfigReader.getPropertyValue("dbUserName");// need to create connection
+        String password= ConfigReader.getPropertyValue("dbPassword");//need to create connection
+        Connection connection = null;//
         Statement statement=null;
         ResultSet resultSet=null;
         ResultSetMetaData resultSetMetaData=null;

@@ -13,7 +13,7 @@ public class GenerateTokenSteps {
 
    // String baseURI = RestAssured.baseURI="http://hrm.syntaxtechs.net/syntaxapi/api";
     public static String token;
-
+    // storing our token as our global variable so when it is created we can update our value
 
     @Given("a JWT is generated")
     public void a_jwt_is_generated() {

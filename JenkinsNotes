@@ -33,3 +33,12 @@ Go Jenkins and create a new Job
     click on advanced
     include the path of report
         **/* cucumber.json
+
+
+   PIPELINES IN JENKINS
+    Developers will push their code to github and that will be linked with Jenkins to automatically build and run the code
+        When everything is good in the dev environment then its time to go in QA environment
+
+        We need to link all projects (dev,qa...) by configuring from first one and selecting post build projects
+        Then click on Build other projects Dev->QA
+            Once DEV build is done successfully then QA will run
