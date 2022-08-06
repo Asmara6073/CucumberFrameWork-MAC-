@@ -11,125 +11,129 @@
         "steps": [
           {
             "result": {
-              "duration": 4800000000,
-              "status": "passed"
+              "error_message": "io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document\n\tat io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)\n\tat io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)\n\tat io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)\n\tat io.restassured.path.json.JsonPath.get(JsonPath.java:202)\n\tat io.restassured.path.json.JsonPath.getString(JsonPath.java:352)\n\tat APISteps.GenerateTokenSecond.a_jwt_is_created(GenerateTokenSecond.java:20)\n\tat ✽.a JWT is created(file:///Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/resources/features/APIScenarios.feature:4)\nCaused by: java.lang.IllegalArgumentException: The JSON input text should neither be null nor empty.\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)\n\tat io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:80)\n\tat io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)\n\tat io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)\n\tat io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)\n\tat io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)\n\tat io.restassured.path.json.JsonPath.get(JsonPath.java:202)\n\tat io.restassured.path.json.JsonPath.getString(JsonPath.java:352)\n\tat APISteps.GenerateTokenSecond.a_jwt_is_created(GenerateTokenSecond.java:20)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat io.cucumber.java.Invoker.doInvoke(Invoker.java:66)\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:24)\n\tat io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)\n\tat io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\n\tat io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:64)\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:104)\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:71)\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)\n\tat com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)\n",
+              "duration": 2716000000,
+              "status": "failed"
             },
             "line": 4,
-            "name": "a JWT is generated",
+            "name": "a JWT is created",
             "match": {
-              "location": "APISteps.GenerateTokenSteps.a_jwt_is_generated()"
+              "location": "APISteps.GenerateTokenSecond.a_jwt_is_created()"
             },
             "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2022-07-19T23:53:31.953Z",
-        "line": 16,
-        "name": "Get the newly created employee",
+        "start_timestamp": "2022-08-06T17:42:59.821Z",
+        "line": 7,
+        "name": "Adding an employee using API",
         "description": "",
-        "id": "this-feature-covers-all-the-api-related-scenario;get-the-newly-created-employee",
+        "id": "api-related-scenarios;adding-an-employee-using-api",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 16000000,
-              "status": "passed"
+              "duration": 1000000,
+              "status": "skipped"
             },
-            "line": 17,
-            "name": "a request is prepared to get the employee",
+            "line": 8,
+            "name": "our request is prepared to create an employee using \"Kobe\",\"Bryant\",\"Bean\",\"M\",\"08/24/1978\",\"employed\",\"Shooting Gaurd\"",
             "match": {
-              "location": "APISteps.APIWorkFlowSteps.a_request_is_prepared_to_get_the_employee()"
+              "arguments": [
+                {
+                  "val": "\"Kobe\"",
+                  "offset": 52
+                },
+                {
+                  "val": "\"Bryant\"",
+                  "offset": 59
+                },
+                {
+                  "val": "\"Bean\"",
+                  "offset": 68
+                },
+                {
+                  "val": "\"M\"",
+                  "offset": 75
+                },
+                {
+                  "val": "\"08/24/1978\"",
+                  "offset": 79
+                },
+                {
+                  "val": "\"employed\"",
+                  "offset": 92
+                },
+                {
+                  "val": "\"Shooting Gaurd\"",
+                  "offset": 103
+                }
+              ],
+              "location": "APISteps.APIScenariosSteps.ourRequestIsPreparedToCreateAnEmployeeUsing(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 345000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 18,
-            "name": "a GET call is made to retrieve the created employee",
+            "line": 9,
+            "name": "we send the POST call to create our employee",
             "match": {
-              "location": "APISteps.APIWorkFlowSteps.a_get_call_is_made_to_retrieve_the_created_employee()"
+              "location": "APISteps.APIScenariosSteps.we_send_the_post_call_to_create_our_employee()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 54000000,
-              "status": "passed"
+              "duration": 1000000,
+              "status": "skipped"
             },
-            "line": 20,
-            "name": "the employee we are getting having ID \"employee.employee_id\" must match with the globally stored employee id",
+            "line": 10,
+            "name": "the status code will be 201",
             "match": {
               "arguments": [
                 {
-                  "val": "\"employee.employee_id\"",
-                  "offset": 38
+                  "val": "201",
+                  "offset": 24
                 }
               ],
-              "location": "APISteps.APIWorkFlowSteps.the_employee_we_are_getting_having_id_must_match_with_the_globally_stored_employee_id(java.lang.String)"
+              "location": "APISteps.APIScenariosSteps.the_status_code_will_be(java.lang.Integer)"
             },
-            "keyword": "And "
+            "keyword": "Then "
           },
           {
             "result": {
-              "error_message": "java.lang.NullPointerException\n\tat APISteps.APIWorkFlowSteps.theRetrievedDataAtObjectMatchesTheDataUsedToCreateTheEmployee(APIWorkFlowSteps.java:208)\n\tat ✽.the retrieved data at \"employee\" object matches the data used to create the employee(file:///Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/resources/features/APIWorkFlow.feature:21)\n",
-              "duration": 25000000,
-              "status": "failed"
+              "status": "skipped"
             },
-            "line": 21,
-            "name": "the retrieved data at \"employee\" object matches the data used to create the employee",
+            "line": 11,
+            "name": "the ID \"Employee.employee_id\" is stored as a global variable for other calls",
             "match": {
               "arguments": [
                 {
-                  "val": "\"employee\"",
-                  "offset": 22
+                  "val": "\"Employee.employee_id\"",
+                  "offset": 7
                 }
               ],
-              "location": "APISteps.APIWorkFlowSteps.theRetrievedDataAtObjectMatchesTheDataUsedToCreateTheEmployee(java.lang.String,io.cucumber.datatable.DataTable)"
+              "location": "APISteps.APIScenariosSteps.the_id_is_stored_as_a_global_variable_for_other_calls(java.lang.String)"
             },
-            "rows": [
-              {
-                "cells": [
-                  "emp_firstname",
-                  "emp_lastname",
-                  "emp_middle_name",
-                  "emp_gender",
-                  "emp_birthday",
-                  "emp_status",
-                  "emp_job_title"
-                ]
-              },
-              {
-                "cells": [
-                  "Wardell",
-                  "Curry",
-                  "Stephen",
-                  "Male",
-                  "1985-06-11",
-                  "employed",
-                  "QA Engineer"
-                ]
-              }
-            ],
             "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@apiGET"
+            "name": "@POSTCREATEEMPLOYEE"
           }
         ]
       }
     ],
-    "name": "This feature covers all the API related scenario",
+    "name": "Api Related Scenarios",
     "description": "",
-    "id": "this-feature-covers-all-the-api-related-scenario",
+    "id": "api-related-scenarios",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/APIWorkFlow.feature",
+    "uri": "file:src/test/resources/features/APIScenarios.feature",
     "tags": []
   }
 ]

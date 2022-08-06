@@ -5,6 +5,16 @@ import org.openqa.selenium.json.Json;
 
 public class APIPayloadConstants {
 
+    //Payload constants allow us to store our payloads and just call them in our request when needed we don't need to create
+        // payload over and over again
+
+    /**
+     * Creating JSON object to dynamically create our payload is the best option so we are not hardcoding anything
+     * we need to create a json object in our method using values passed as arguments
+     *and then turn it into a string to return a string
+     *
+     *
+     */
     public static String createEmployeePayload(){
         String createEmployee = "{\n" +
                 "  \"emp_firstname\": \"Wardell\",\n" +
@@ -35,8 +45,9 @@ public class APIPayloadConstants {
     public static String createEmployeeDynamic
             (String firstname,String lastname,String middlename,String gender,
              String birthday,String status,String jobTitle){
-        JSONObject obj=new JSONObject(); // creating json object to hold the payolad of our createEmployee POST call
-                                                //use this to pass the values through our feature file
+        JSONObject obj=new JSONObject(); // method that passes parameters of json object that holds the payolad of our
+                                        // createEmployee POST call
+                                        //Arguments will be passed through the feature file
         obj.put("emp_firstname",firstname);
         obj.put("emp_lastname",lastname);
         obj.put("emp_middle_name",middlename);

@@ -3,7 +3,8 @@ package utils;
 import io.restassured.RestAssured;
 
 public class APIConstants {
-
+//API constants contains all the constants that will be used throughout all api tests
+    // has all of the URI's as well as our headers that we pass with most of our requests
     public static final String BaseURI= RestAssured.baseURI="http://hrm.syntaxtechs.net/syntaxapi/api";
     public static final String GENERATE_TOKEN_URI=BaseURI+ "/generateToken.php";
     public static final String CREATE_EMPLOYEE_URI=BaseURI+ "/createEmployee.php";
