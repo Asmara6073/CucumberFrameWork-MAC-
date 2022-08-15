@@ -3,7 +3,9 @@ package runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.junit.runner.RunWith;
+import org.testng.annotations.DataProvider;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -26,7 +28,7 @@ import org.junit.runner.RunWith;
             // scenario having the tag
         //use and, if we need to execute scenarios from logical and keyword which will execute the scenarios
             //having both the tags in it
-        tags="@adminlogin",
+        tags="",
         plugin={"html:target/cucumber-reports.html","pretty","json:target/cucumber.json",
                 "rerun:target/failed.txt"
 
@@ -35,5 +37,8 @@ import org.junit.runner.RunWith;
 
 )
 
-public class RunnerClass {
+public class RunnerClass  {
+
+
+
 }

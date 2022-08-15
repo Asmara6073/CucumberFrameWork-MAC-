@@ -2,6 +2,7 @@
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/runners/Regression.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/utils/APIConstants.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/steps/DashboardSteps.java
+/Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/runners/ParallelRunner.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/pages/DashboardPage.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/steps/Hooks.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/steps/AddEmployeeSteps.java
@@ -17,6 +18,8 @@
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/utils/CommonMethods.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/utils/DBUtils.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/runners/APIRunner.java
+/Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/APISteps/GenerateTokenSecond.java
+/Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/APISteps/APIScenariosSteps.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/runners/RunnerClass.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/runners/Smoke.java
 /Users/tarikabraham/IdeaProjects/CucumberFrameworkBatch12/src/test/java/runners/FailedRunner.java

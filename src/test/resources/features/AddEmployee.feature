@@ -15,7 +15,7 @@ Background:
     And user clicks on save button
     Then employee added successfully
 
-    @123
+
     Scenario: Adding one employee using cucumber feature file
       #simply passing the values we want to use in the step through our feature file
       # The step will contain three parameters of the string type ad use these values as arguments for the step definition

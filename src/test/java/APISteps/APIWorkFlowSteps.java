@@ -5,9 +5,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
+import org.openqa.selenium.json.Json;
 import utils.APIConstants;
 import utils.APIPayloadConstants;
 
@@ -55,9 +57,14 @@ public class APIWorkFlowSteps {
 
     @Then("the employee created contains key {string} and value {string}")
     public void the_employee_created_contains_key_and_value(String key, String value) {
-    response.then().assertThat().body(key,equalTo(value));
-    //response.then() -- how we verify our response
-        //using hamcrest matcher to assert the key(Message) is equal to (Employee created) but passed through the feature file
+   // response.then().assertThat().body(key,equalTo(value));
+
+    String jsonRespone=response.body().asString();
+        JsonPath jp=new JsonPath(jsonRespone);
+
+        String message= jp.getString(key);
+        Assert.assertEquals(message,value);
+
 
     }
 
@@ -195,7 +202,12 @@ public class APIWorkFlowSteps {
         List<Map<String,String>>expectedData=dataTable.asMaps(String.class,String.class);
         // we are storing our expected data in the datatable in the feature file as a list of maps
 
+        //String responseBody=response.body().asString();
+        //JsonPath jp=new JsonPath(responseBody);
+
+        //Map<String,String>actualData=jp.get(empObject);
         Map<String,String>actualData=response.jsonPath().get(empObject);
+        //response.jsonPath().get(empObject)
         // we are storing our response object as a map (Actual Data)
 
         for(Map<String,String>singlePairData:expectedData){
